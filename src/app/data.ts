@@ -4,6 +4,16 @@ export const data: any = [
         "id": 1,
         "performanceAreas": [
             {
+                "name": "Retail",
+                "businessCapabilities": [
+                    {"name": "Current Accounts"},
+                    {"name": "Savings"},
+                    {"name": "Loans"},
+                    {"name": "Retail Channels / API / CRM"},
+                    {"name": "Self Service"},
+                ]
+            },
+            {
                 "name": "Corporates & Markets",
                 "businessCapabilities": [
                     {
@@ -11,7 +21,7 @@ export const data: any = [
                     },
                     {
                         "name": "Client Management",
-                        "detailsList": [
+                        "businessCapabilityList": [
                             {
                                 "name": "Client Data Management"
                             },
@@ -39,15 +49,14 @@ export const data: any = [
                         "name": "Transaction Banking"
                     }
                 ]
-            }
-
+            },
         ]
 
     },
     {
         "name": "EBH",
         "id": 2,
-        "performanceAreas:": [
+        "performanceAreas": [
             {
                 "name": "Retail",
                 "businessCapabilities": [
@@ -62,7 +71,7 @@ export const data: any = [
                     },
                     {
                         "name": "Retail Channels / API / CRM",
-                        "detailsList": [
+                        "businessCapabilityList": [
                             {
                                 "name": "Client Data Management"
                             },

@@ -7,20 +7,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
+import { Location, LocationStrategy, PathLocationStrategy } from '@angular/common';
 
 @NgModule({
     declarations: [
         AppComponent,
     ],
     imports: [
+        AppRoutingModule,
         BrowserModule,
         BrowserAnimationsModule,
-        CoreModule,
         ViewContainersModule,
-        AppRoutingModule,
-        SharedModule
+        CoreModule,
+        SharedModule,
     ],
-    providers: [],
+    providers: [Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

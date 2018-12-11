@@ -1,3 +1,29 @@
-<p>
-  business-capabilities works!
-</p>
+<section class="business-capabilities">
+    <div class="navigation-button">
+        <button mat-raised-button (click)="navigateToPrevious()"> &lt; Back to Performance Areas</button>
+    </div>
+    <div class="section-heading">
+        {{regionName$}} - Business Capabilities
+    </div>
+    <div class="section-content">
+        <div class="left-container">
+            <div class="card">
+                <div class="card-heading">
+                    {{businessCapability$.name}}
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li *ngFor="let item of businessCapability$.businessCapabilityList ;let listIndex = index"
+                            (click)="clickedListItem(listIndex)">
+                            {{item.name}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="right-container">
+            <h3>{{businessCapability$.name}}</h3>
+        </div>
+
+    </div>
+</section>

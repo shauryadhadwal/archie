@@ -1,7 +1,10 @@
+import { LoadData, ReadData } from './../actions/data.action';
+import { State, Action, StateContext, Selector, createSelector } from '@ngxs/store';
+import { ReadExcelService } from '../readExcel/read-excel.service';
 
 export interface BusinessCapability{
     name: string;
-    businessDetailsList: [];
+    businessCapabilityList: [];
 }
 
 export interface PerformanceArea{
@@ -21,7 +24,7 @@ export interface DataStateModel {
 }
 
 const defaults: DataStateModel = {
-    regions: [];
+    regions: []
 };
 
 @State<DataStateModel>({
@@ -30,21 +33,29 @@ const defaults: DataStateModel = {
 })
 export class DataState{
 
+    constructor(private readExcelService: ReadExcelService){}
+
     @Selector()
     static regions(state: DataStateModel) {
         return state.regions;
     }
 
-    @Action(GetFriends)
-    getFriends(ctx: StateContext<FriendsStateModel>) {
-        return this.friendsService.getFriendsDashboard().pipe(tap(list => {
+    // static performanceArea(name: string) {
+    //     return createSelector([DataState], (state: DataStateModel) => {
+    //         return state.filter(s => s.name )
+    //     })
+    // }
 
+    @Action(LoadData)
+    loadData(ctx: StateContext<DataStateModel>, action: LoadData) {
             ctx.patchState({
-                friends: list
+                regions: action.regions
             });
-            return;
-        }));
     }
-    
+
+    @Action(ReadData)
+    ReadData() {
+        this.readExcelService.readData();
+    }
 }
 

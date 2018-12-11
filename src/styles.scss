@@ -1,2 +1,116 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Sans:400,700);
+@import url(https://use.fontawesome.com/releases/v5.4.1/css/all.css);
+
+body,
+html,
+main {
+    font-family: 'PT Sans', sans-serif;
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #00497b, #bce4fa);
+}
+
+main {
+    left: 0;
+    top: 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+//--------------------------
+
+
+// -------------------------
+section {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    
+    div.navigation-button{
+        
+    }
+    
+    div.section-heading {
+        text-align: center;
+        width: 100%;
+        font-size: 26px;
+        font-weight: 700;
+    }
+    
+    div.section-content {
+        padding-top: 10px;
+        // box-sizing: border-box;
+    }
+    
+    div.card {
+        background-color: white;
+        box-sizing: border-box;
+        min-width: 300px;
+        min-height: 300px;
+        border-radius: 5px;
+        border-left: solid orange 10px;
+        box-shadow: 3px 3px 0 #aaa;
+        padding: 10px;
+        margin: 5px;
+        
+        div.card-heading {
+            text-align: left;
+            width: 100%;
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        div.card-content {
+            cursor: pointer;
+            margin-left: 10px;
+
+            ul{
+                list-style: none;
+
+                li{
+                    margin: 10px 0;
+
+                    &:hover{
+                        color: blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+section.performance-areas {
+
+    div.section-content {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+section.business-capabilities {
+
+    div.section-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100%;
+        height: 90%;
+
+        div.left-container{
+            div.card{
+                height: 100%;
+            }
+
+        }
+        div.right-container{
+
+        }
+    }
+}
