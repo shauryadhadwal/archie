@@ -8,8 +8,8 @@ import { routerTransition } from './shared/animations/routerTransition';
     selector: 'app-root',
     animations: [routerTransition],
     template: `
-    <main [@routerTransition]="getState(o)">
-        <router-outlet #o="outlet"></router-outlet>
+    <main [@routerTransition]="getState(outlet)">
+        <router-outlet #outlet="outlet"></router-outlet>
     </main>
   `,
     styles: []

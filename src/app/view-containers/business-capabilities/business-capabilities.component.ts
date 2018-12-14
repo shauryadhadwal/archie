@@ -2,14 +2,14 @@ import { environment } from './../../../environments/environment';
 import { GoToHomePage } from './../../core/actions/router.action';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BusinessCapability, DataState } from './../../core/states/data.state.model';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { NavigateToPrevious } from 'src/app/core/actions/router.action';
 
 @Component({
     selector: 'app-business-capabilities',
     templateUrl: './business-capabilities.component.html',
-    styleUrls: ['./business-capabilities.component.scss']
+    styleUrls: ['./business-capabilities.component.scss'],
 })
 export class BusinessCapabilitiesComponent implements OnInit {
 

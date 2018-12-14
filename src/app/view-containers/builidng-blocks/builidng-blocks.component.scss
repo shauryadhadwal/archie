@@ -3,15 +3,13 @@ section {
     div.section-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 100%;
-        min-height: 90%;
+        height: inherit;
 
         div.left-container{
             div.card{
+                height: 100%;
             }
 
-        }
-        div.right-container{
         }
     }
 }

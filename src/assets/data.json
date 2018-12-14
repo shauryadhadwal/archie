@@ -1,5 +1,6 @@
 {
-    "capabilities": [{
+    "capabilities": [
+        {
             "name": "Retail",
             "icon": "home",
             "buildingBlocks": [{
@@ -13,7 +14,8 @@
                 },
                 {
                     "name": "Retail Channels / API / CRM",
-                    "businessCapabilities": [{
+                    "businessCapabilities": [
+                        {
                             "name": "Client Data Management",
                             "subCapabilities": [{
                                     "name": "self-service online"
@@ -33,11 +35,23 @@
                             ]
                         },
                         {
-                            "name": "Analytical CRM",
+                            "name": "Customer Onboarding",
                             "subCapabilities": []
                         },
                         {
-                            "name": "Corporate Account Servicing",
+                            "name": "Web Banking",
+                            "subCapabilities": []
+                        },
+                        {
+                            "name": "Mobile Banking",
+                            "subCapabilities": []
+                        },
+                        {
+                            "name": "Call Center",
+                            "subCapabilities": []
+                        },
+                        {
+                            "name": "Self Service & ATMs",
                             "subCapabilities": []
                         }
                     ]
@@ -80,6 +94,33 @@
                 },
                 {
                     "name": "Transaction Banking"
+                }
+            ]
+        },
+        {
+            "name": "Risk Management",
+            "icon": "bolt",
+            "buildingBlocks": [
+                {
+                    "name": "Compliance Risk"
+                },
+                {
+                    "name": "Credit Risk Management"
+                },
+                {
+                    "name": "ERM"
+                },
+                {
+                    "name": "Liquidity Risk"
+                },
+                {
+                    "name": "Market Risk"
+                },
+                {
+                    "name": "Operational Risk"
+                },
+                {
+                    "name": "Security Risk"
                 }
             ]
         }

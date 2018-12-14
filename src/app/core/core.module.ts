@@ -12,7 +12,7 @@ import { RouterHistoryState } from './states/router.state';
             DataState,
             RouterHistoryState
         ]),
-        NgxsLoggerPluginModule.forRoot({disabled: environment.production}),
+        NgxsLoggerPluginModule.forRoot({disabled: true}),
 
   ]
 })

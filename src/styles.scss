@@ -22,10 +22,11 @@ main {
     margin-right: auto;
     box-sizing: border-box;
     padding: 10px;
+    max-height: 100vh;
+    overflow: hidden;
 }
 
 //--------------------------
-
 
 // -------------------------
 section {
@@ -34,16 +35,31 @@ section {
     height: 100%;
     box-sizing: border-box;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     
-    div.section-heading {
+    .section-heading {
         text-align: center;
         width: 100%;
         font-size: 26px;
         font-weight: 700;
     }
     
-    div.section-content {
-        padding-top: 10px;
+    .section-content {
+        flex-grow : 1;
+        box-sizing: border-box;
+        padding-top: 30px;
+
+        div.left-container{
+            padding: 10px 10px 10px 0;
+        }
+
+        div.right-container{
+            p{
+                padding-left: 30px;
+            }
+        }
     }
     
     div.card {
@@ -55,7 +71,6 @@ section {
         border-left: solid orange 10px;
         box-shadow: 3px 3px 0 #aaa;
         padding: 10px;
-        margin: 10px 20px;
         
         div.card-heading {
             text-align: left;

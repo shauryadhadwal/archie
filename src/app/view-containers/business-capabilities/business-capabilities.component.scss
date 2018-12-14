@@ -1,13 +1,38 @@
 section {
+
+    height: 100%;
+
     div.section-content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 100%;
         min-height: 90%;
+        padding-bottom: 10px;
 
-        div.left-container{
-        }
-        div.right-container{
+        div.left-container {}
+
+        div.right-container {}
+    }
+
+    div.tabs-container {
+        position: relative;
+        height: 40px;
+        bottom: 20px; //Half of height;
+        width:100%;
+        box-sizing: border-box;
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+
+        div.tab {
+            box-sizing: border-box;
+            height: inherit;
+            text-align: center;
+            background-color: white;
+            box-sizing: border-box;
+            border-radius: 2px;
+            padding: 10px;
+            border: 1px #eee solid;
         }
     }
 }
