@@ -2,30 +2,35 @@ import { LoadData, ReadData } from './../actions/data.action';
 import { State, Action, StateContext, Selector, createSelector } from '@ngxs/store';
 import { ReadExcelService } from '../readExcel/read-excel.service';
 
-export interface BusinessCapability{
+//------------------------------------------------------
+export interface Capability{
     name: string;
-    businessCapabilityList: [];
+    buildingBlocks: BuildingBlock[]
 }
 
-export interface PerformanceArea{
-    name: string,
-    id: number,
+export interface BuildingBlock{
+    name: string;
     businessCapabilities: BusinessCapability[]
 }
 
-export interface Region{
-    name: string,
-    id: number,
-    performanceAreas: PerformanceArea[]
+export interface BusinessCapability{
+    name: string;
+    subCapabilities: SubCapability[];
+}
+
+export interface SubCapability{
+    name: string;
 }
 
 export interface DataStateModel {
-    regions: Region[]
+    capabilities: Capability[]
 }
 
 const defaults: DataStateModel = {
-    regions: []
+    capabilities: []
 };
+
+//------------------------------------------------------
 
 @State<DataStateModel>({
     name: 'data',
@@ -33,29 +38,18 @@ const defaults: DataStateModel = {
 })
 export class DataState{
 
-    constructor(private readExcelService: ReadExcelService){}
+    constructor(private readExcel: ReadExcelService) {}
 
     @Selector()
-    static regions(state: DataStateModel) {
-        return state.regions;
+    static capabilities(state: DataStateModel) {
+        return state.capabilities;
     }
-
-    // static performanceArea(name: string) {
-    //     return createSelector([DataState], (state: DataStateModel) => {
-    //         return state.filter(s => s.name )
-    //     })
-    // }
 
     @Action(LoadData)
     loadData(ctx: StateContext<DataStateModel>, action: LoadData) {
             ctx.patchState({
-                regions: action.regions
+                capabilities: action.data
             });
-    }
-
-    @Action(ReadData)
-    ReadData() {
-        this.readExcelService.readData();
     }
 }
 

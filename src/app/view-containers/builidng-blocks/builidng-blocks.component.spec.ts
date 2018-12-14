@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PerformanceAreasComponent } from './performance-areas.component';
+import { BuilidngBlocksComponent } from './builidng-blocks.component';
 
-describe('PerformanceAreasComponent', () => {
-  let component: PerformanceAreasComponent;
-  let fixture: ComponentFixture<PerformanceAreasComponent>;
+describe('BuilidngBlocksComponent', () => {
+  let component: BuilidngBlocksComponent;
+  let fixture: ComponentFixture<BuilidngBlocksComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PerformanceAreasComponent ]
+      declarations: [ BuilidngBlocksComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PerformanceAreasComponent);
+    fixture = TestBed.createComponent(BuilidngBlocksComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,87 @@
+{
+    "capabilities": [{
+            "name": "Retail",
+            "icon": "home",
+            "buildingBlocks": [{
+                    "name": "Current Accounts"
+                },
+                {
+                    "name": "Savings"
+                },
+                {
+                    "name": "Loans"
+                },
+                {
+                    "name": "Retail Channels / API / CRM",
+                    "businessCapabilities": [{
+                            "name": "Client Data Management",
+                            "subCapabilities": [{
+                                    "name": "self-service online"
+                                },
+                                {
+                                    "name": "self-service mobile"
+                                },
+                                {
+                                    "name": "onboard in branch"
+                                },
+                                {
+                                    "name": "background checks"
+                                },
+                                {
+                                    "name": "regulatory reporting"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "Analytical CRM",
+                            "subCapabilities": []
+                        },
+                        {
+                            "name": "Corporate Account Servicing",
+                            "subCapabilities": []
+                        }
+                    ]
+                },
+                {
+                    "name": "Self Service"
+                }
+            ]
+        },
+        {
+            "name": "Corporates & Markets",
+            "icon": "building",
+            "buildingBlocks": [{
+                    "name": "Cards Acquiring"
+                },
+                {
+                    "name": "Client Management",
+                    "businessCapabilities": [{
+                            "name": "Client Data Management"
+                        },
+                        {
+                            "name": "Analytical CRM"
+                        },
+                        {
+                            "name": "Corporate Account Servicing"
+                        }
+                    ]
+                },
+                {
+                    "name": "Corporate Channels / API's / CRM"
+                },
+                {
+                    "name": "Corporate Lending"
+                },
+                {
+                    "name": "Markets"
+                },
+                {
+                    "name": "Payments"
+                },
+                {
+                    "name": "Transaction Banking"
+                }
+            ]
+        }
+    ]
+}

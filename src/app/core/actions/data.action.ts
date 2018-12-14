@@ -1,6 +1,6 @@
 export class LoadData {
     static readonly type = '[DATA] loadData';
-    constructor(public regions: any) { }
+    constructor(public data: any) { }
 }
 
 export class ReadData {

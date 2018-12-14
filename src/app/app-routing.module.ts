@@ -1,24 +1,24 @@
 import { BusinessCapabilitiesComponent } from './view-containers/business-capabilities/business-capabilities.component';
-import { MapContainerComponent } from './view-containers/map-container/map-container.component';
-import { PerformanceAreasComponent } from './view-containers/performance-areas/performance-areas.component';
+import { BuilidngBlocksComponent } from './view-containers/builidng-blocks/builidng-blocks.component';
+import { CapabilitiesComponent } from './view-containers/capabilities/capabilities.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-    { path: '', redirectTo: 'regions', pathMatch: 'full' },
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
-        path: 'regions', component: MapContainerComponent
+        path: 'home', component: CapabilitiesComponent, data: { state: 'home' } 
     },
     {
-        path: 'regions/:regionIndex/areas', component: PerformanceAreasComponent
+        path: 'buildingblock', component: BuilidngBlocksComponent, data: { state: 'buildingBlock' }
     },
     {
-        path: 'regions/:regionIndex/areas/:areaIndex/business/:businessIndex', component: BusinessCapabilitiesComponent
+        path: 'businessCapability', component: BusinessCapabilitiesComponent, data: { state: 'businessCapability' }
     }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

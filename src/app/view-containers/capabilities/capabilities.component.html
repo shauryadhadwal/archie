@@ -1,0 +1,21 @@
+<section class="capabilities">
+    <div class="section-heading">
+        <i class="fas fa-book"></i> Book of Architecture - Business Capability Map
+    </div>
+    <div class="section-content">
+        <ng-container *ngFor="let cpbl of (capabilities$ | async); let cpblIndex = index">
+            <div class="card">
+                <div class="card-heading">
+                    <i class="fas fa-{{cpbl.icon}}"></i> {{cpbl.name}}
+                </div>
+                <div class="card-content">
+                    <ul>
+                        <li *ngFor="let item of cpbl.buildingBlocks;let blockIndex = index" (click)="clickedBuildingBlock(cpblIndex,blockIndex)">
+                                <i class="fas fa-caret-right"></i> {{item.name}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</section>

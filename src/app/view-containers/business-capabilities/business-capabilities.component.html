@@ -1,29 +1,47 @@
 <section class="business-capabilities">
     <div class="navigation-button">
-        <button mat-raised-button (click)="navigateToPrevious()"> &lt; Back to Performance Areas</button>
+        <button mat-raised-button (click)="navigateToPrevious()"> <i class="fas fa-caret-left"></i> Back to Building
+            Block</button>
     </div>
-    <div class="section-heading">
-        {{regionName$}} - Business Capabilities
-    </div>
-    <div class="section-content">
-        <div class="left-container">
-            <div class="card">
-                <div class="card-heading">
-                    {{businessCapability$.name}}
-                </div>
-                <div class="card-content">
-                    <ul>
-                        <li *ngFor="let item of businessCapability$.businessCapabilityList ;let listIndex = index"
-                            (click)="clickedListItem(listIndex)">
-                            {{item.name}}
-                        </li>
-                    </ul>
+    <ng-container *ngIf="businessCapability">
+        <div class="section-content">
+            <div class="left-container">
+                <div class="card">
+                    <div class="card-heading">
+                        <i class="fas fa-caret-right"></i> Sub-Capabilities
+                    </div>
+                    <div class="card-content">
+                        <ul>
+                            <li *ngFor="let subItem of businessCapability.subCapabilities ;let subIndex = index"
+                                (click)="clickedBusinessCapability(subIndex)">
+                                <i class="fas fa-caret-right"></i> {{subItem.name}}
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
+            <div class="right-container">
+                <div>
+                    <h3><i class="fas fa-file-alt"></i> Description</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                        labore
+                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                        ut
+                        aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                        culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div>
+                        <h3><i class="fas fa-balance-scale"></i> Principles</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                            labore
+                            et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
+                            ut
+                            aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                            culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+            </div>
         </div>
-        <div class="right-container">
-            <h3>{{businessCapability$.name}}</h3>
-        </div>
-
-    </div>
+    </ng-container>
 </section>

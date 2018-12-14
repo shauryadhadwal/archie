@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url(https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700|PT+Sans:400,700);
-@import url(https://use.fontawesome.com/releases/v5.4.1/css/all.css);
+@import url(https://use.fontawesome.com/releases/v5.6.1/css/all.css);
 
 body,
 html,
@@ -11,7 +11,7 @@ main {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: linear-gradient(45deg, #00497b, #bce4fa);
+    background: linear-gradient(155deg, #00497b, #bce4fa, #fff);
 }
 
 main {
@@ -33,10 +33,7 @@ section {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
-    
-    div.navigation-button{
-        
-    }
+    padding: 0 20px;
     
     div.section-heading {
         text-align: center;
@@ -47,7 +44,6 @@ section {
     
     div.section-content {
         padding-top: 10px;
-        // box-sizing: border-box;
     }
     
     div.card {
@@ -59,7 +55,7 @@ section {
         border-left: solid orange 10px;
         box-shadow: 3px 3px 0 #aaa;
         padding: 10px;
-        margin: 5px;
+        margin: 10px 20px;
         
         div.card-heading {
             text-align: left;
@@ -81,36 +77,14 @@ section {
                     &:hover{
                         color: blue;
                     }
+
+                    i{
+                        margin-right: 5px;  
+                    }
                 }
             }
         }
     }
 }
 
-section.performance-areas {
 
-    div.section-content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-section.business-capabilities {
-
-    div.section-content {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 100%;
-        height: 90%;
-
-        div.left-container{
-            div.card{
-                height: 100%;
-            }
-
-        }
-        div.right-container{
-
-        }
-    }
-}

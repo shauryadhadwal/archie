@@ -1,5 +1,7 @@
+import { environment } from './../../../environments/environment';
+import { GoToHomePage } from './../../core/actions/router.action';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Region, PerformanceArea, BusinessCapability } from './../../core/states/data.state.model';
+import { BusinessCapability, DataState } from './../../core/states/data.state.model';
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngxs/store';
 import { NavigateToPrevious } from 'src/app/core/actions/router.action';
@@ -11,9 +13,11 @@ import { NavigateToPrevious } from 'src/app/core/actions/router.action';
 })
 export class BusinessCapabilitiesComponent implements OnInit {
 
-    public regionName$: string;
-    public performanceAreaName$: string;
-    public businessCapability$: BusinessCapability;
+    private cpblIndex;
+    private blockIndex;
+    private bcIndex;
+
+    businessCapability: BusinessCapability;
 
     constructor(private route: ActivatedRoute,
         private store: Store,
@@ -21,18 +25,41 @@ export class BusinessCapabilitiesComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        const regionIndex = +this.route.snapshot.paramMap.get('regionIndex');
-        const areaIndex = +this.route.snapshot.paramMap.get('areaIndex');
-        const businessIndex = +this.route.snapshot.paramMap.get('businessIndex');
 
-        this.store.select(state => state.data.regions[regionIndex]).subscribe(region => {
-            this.regionName$ = region.name;
-            this.performanceAreaName$ = region.performanceAreas[areaIndex].name;
-            this.businessCapability$ = region.performanceAreas[areaIndex].businessCapabilities[businessIndex];
-        });
-    }
+        if (environment.production == false) {
+            this.businessCapability = {
+                "name": "Client Data Management",
+                "subCapabilities": [
+                    {
+                        "name": "self-service online"
+                    },
+                    {
+                        "name": "self-service mobile"
+                    },
+                    {
+                        "name": "onboard in branch"
+                    },
+                    {
+                        "name": "background checks"
+                    },
+                    {
+                        "name": "regulatory reporting"
+                    }
+                ]
+            }
+            return;
+        }
 
-    clickedListItem(listIndex) {
+        const capabilities = this.store.selectSnapshot(DataState.capabilities);
+        if (capabilities.length == 0 || capabilities == null) {
+            this.store.dispatch(new GoToHomePage());
+        } else {
+            this.cpblIndex = +this.route.snapshot.queryParamMap.get('cpblIndex');
+            this.blockIndex = +this.route.snapshot.queryParamMap.get('blockIndex');
+            this.bcIndex = +this.route.snapshot.queryParamMap.get('bcIndex');
+
+            this.businessCapability = capabilities[this.cpblIndex].buildingBlocks[this.blockIndex].businessCapabilities[this.bcIndex];
+        }
     }
 
     navigateToPrevious() {
