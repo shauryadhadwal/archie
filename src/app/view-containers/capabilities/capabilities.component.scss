@@ -6,11 +6,54 @@ section.capabilities {
     }
 
     div.section-content {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+        display: flex;
+        flex-direction: row;
+        flex-flow: wrap;
+        justify-content: space-around;
 
         div.card{
-            margin: 10px 20px;
+
+            ul{
+                li{
+                    display: block;
+                    box-sizing: border-box;
+                    float: left;
+                    text-align:center;
+                    padding: 10px;
+                    border-radius: 5px;
+                    background-color: #0078b4;
+                    color: #fff;
+                    box-shadow: 0 3px 3px 0 #aaa;
+                    margin-right: 10px;
+                    width: 150px;
+                    height:50px;
+                    
+                    &:active{
+                        transform: translate(3px, 3px);
+                        box-shadow: none;
+                        background-color: #2f9bd1;
+
+                    }
+                }
+            }
         }
     }
 }
+
+@media only screen and (min-width: 768px) and (max-width: 1024px){
+    div.card{
+        min-width: 300px;
+        max-width: 400px;
+    }
+}
+
+@media only screen and (min-width: 1025px){
+    div.card{
+        min-width: 0;
+        width: 48%;
+    }
+}
+
+
+
+

@@ -123,6 +123,33 @@
                     "name": "Security Risk"
                 }
             ]
+        },
+        {
+            "name": "Risk Management",
+            "icon": "bolt",
+            "buildingBlocks": [
+                {
+                    "name": "Compliance Risk"
+                },
+                {
+                    "name": "Credit Risk Management"
+                },
+                {
+                    "name": "ERM"
+                },
+                {
+                    "name": "Liquidity Risk"
+                },
+                {
+                    "name": "Market Risk"
+                },
+                {
+                    "name": "Operational Risk"
+                },
+                {
+                    "name": "Security Risk"
+                }
+            ]
         }
     ]
 }
